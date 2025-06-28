@@ -15,6 +15,11 @@
       min-height: 100vh;
     }
 
+    .dark_mode{
+      background: linear-gradient(to right, #1e1e2f, #2c2c3a);
+      color: #e0e0e0;
+    }
+
     .header {
       text-align: center;
       padding: 20px;
@@ -22,6 +27,10 @@
       background: linear-gradient(to right, #e49cd2, #b6d8ff);
       width: 100%;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .dark_mode .header{
+      background: linear-gradient(to right, #3e3e5a, #505073);
     }
 
     .header h1 {
@@ -51,6 +60,11 @@
       border: 2px solid #f3c7e5;
     }
 
+    .dark_mode .car{
+      background: #2b2b3d;
+      border: 2px solid #5a5a8a;
+    }
+
     .icono-frase {
       font-size: 36px;
       background-color: #e58ed8;
@@ -73,6 +87,10 @@
       margin-bottom: 15px;
     }
 
+    .dark_mode .subtexto{
+      color: #bbb;
+    }
+
     .etiqueta-frase, .etiqueta-estilo {
       display: block;
       font-weight: bold;
@@ -88,6 +106,12 @@
       padding: 10px;
       resize: none;
       font-size: 14px;
+    }
+
+    .dark_mode textarea{
+      background-color: #3c3c50;
+      color: #eee;
+      border: 1px solid #666;
     }
 
     .opciones-estilo {
@@ -111,10 +135,10 @@
       transform: scale(1.05);
     }
 
-    .estilo-pato { background: linear-gradient(to right, #fce38a, #f38181); }
-    .estilo-flores { background: linear-gradient(to right, #fcb6d6, #f8bfbf); }
-    .estilo-gatitos { background: linear-gradient(to right, #dcb6f8, #a6a8ff); }
-    .estilo-paisaje { background: linear-gradient(to right, #b3f6c9, #89d3f6); }
+    .estilo-paisaje { background: linear-gradient(to right, #fce38a, #f38181); }
+    .estilo-Piolin { background: linear-gradient(to right, #fcb6d6, #f8bfbf); }
+    .estilo-Animales { background: linear-gradient(to right, #dcb6f8, #a6a8ff); }
+    .estilo-Dios { background: linear-gradient(to right, #b3f6c9, #89d3f6); }
 
     .generar {
       background: linear-gradient(to right, #f89dc5, #8db7ff);
@@ -136,7 +160,7 @@
 </head>
 <body>
   <header class="header">
-    <h1>Frases con IA</h1>
+    <h1>TIA Visionaria</h1>
     <p>Crea una frase del dia con IA</p>
   </header>
 
@@ -151,10 +175,10 @@
 
       <p class="etiqueta-estilo"> Estilo de imagen:</p>
       <div class="opciones-estilo">
-        <button class="boton estilo-pato">Paisaje</button>
-        <button class="boton estilo-flores">Piolin</button>
-        <button class="boton estilo-gatitos">Animales</button>
-        <button class="boton estilo-paisaje">Dios</button>
+        <button class="boton estilo-paisaje">Paisaje</button>
+        <button class="boton estilo-Piolin">Piolin</button>
+        <button class="boton estilo-Animales">Animales</button>
+        <button class="boton estilo-Dios">Dios</button>
       </div>
 
       <button class="generar">Generar con IA</button>
