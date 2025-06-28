@@ -2,14 +2,15 @@ import os
 import requests
 import random
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from dotenv import load_dotenv
 
 load_dotenv()
 NOVITA_API_KEY = os.getenv("sk_wM9mak8V8vJsL7foCG6WTNSJpahzqPQ-swNPsCfsSDo")
 
 app = Flask(__name__)
+CORS(app)
 
-# Ahora cada estilo tiene 3 URLs (ejemplo, poné las tuyas directas)
 ESTILOS_IMAGENES = {
     "piolin": [
         "https://images.app.goo.gl/q6m3WXN5kA7fkk4y8",
@@ -41,7 +42,6 @@ def generar():
     if not urls:
         return jsonify({"error": f"Estilo '{estilo}' no soportado"}), 400
 
-    # Elegimos una URL al azar de la lista
     url_imagen = random.choice(urls)
 
     headers = {
@@ -64,7 +64,6 @@ def generar():
         return jsonify({"error": "Error al generar imagen con Novita", "details": response.text}), 500
 
     resultado = response.json()
-
     imagen_base64 = resultado.get("image_base64")
     if not imagen_base64:
         return jsonify({"error": "No se recibió imagen de Novita"}), 500
@@ -73,7 +72,6 @@ def generar():
         "mensaje": "Imagen generada con éxito",
         "imagen_base64": imagen_base64
     })
-
 
 @app.route('/')
 def home():
