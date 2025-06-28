@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>frases con IA</title>
+  <meta charset="UTF-8" />
+  <title>TIA Visionaria</title>
   <style>
+    /* Aquí va todo tu CSS igual que antes, nada cambia */
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -13,15 +14,42 @@
       align-items: center;
       justify-content: flex-start;
       min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
     }
 
     .header {
+      position: relative;
       text-align: center;
       padding: 20px;
       color: white;
       background: linear-gradient(to right, #e49cd2, #b6d8ff);
       width: 100%;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    #modoOscuroBtn {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      padding: 10px 15px;
+      font-size: 20px;
+      background-color: #ffffff88;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    #modoOscuroBtn:hover {
+      background-color: #ffffffcc;
+      transform: scale(1.05);
+    }
+
+    body.modo-oscuro #modoOscuroBtn {
+      background-color: #333333aa;
+      color: white;
     }
 
     .header h1 {
@@ -39,6 +67,7 @@
       display: flex;
       justify-content: center;
       margin-top: 30px;
+      margin-bottom: 80px;
     }
 
     .card {
@@ -98,11 +127,13 @@
     }
 
     .boton {
-      padding: 10px;
+      padding: 12px 18px;
       border: none;
       border-radius: 12px;
-      color: white;
+      color: rgb(0, 0, 0);
       font-weight: bold;
+      font-size: 16px;
+      white-space: normal;
       cursor: pointer;
       transition: transform 0.2s;
     }
@@ -119,10 +150,10 @@
     .generar {
       background: linear-gradient(to right, #f89dc5, #8db7ff);
       border: none;
-      padding: 12px 20px;
+      padding: 14px 22px;
       color: white;
       font-weight: bold;
-      font-size: 15px;
+      font-size: 16px;
       border-radius: 20px;
       cursor: pointer;
       transition: background 0.3s;
@@ -132,33 +163,184 @@
     .generar:hover {
       background: linear-gradient(to right, #f48bbd, #6da9ff);
     }
+
+    .footer {
+      margin-top: auto;
+      width: 100%;
+      background: linear-gradient(to right, #fbb1d6, #b6d8ff);
+      padding: 20px 10px;
+      text-align: center;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 14px;
+    }
+
+    .footer-iconos {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .footer-contenido p {
+      margin: 4px 0;
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .footer-contenido small {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    body.modo-oscuro {
+      background: #121212;
+      color: #f0f0f0;
+    }
+
+    body.modo-oscuro .header {
+      background: linear-gradient(to right, #2b2b2b, #444);
+      color: #f0f0f0;
+    }
+
+    body.modo-oscuro .card {
+      background: #1e1e1e;
+      color: #f0f0f0;
+      border: 2px solid #444;
+    }
+
+    body.modo-oscuro textarea {
+      background-color: #2c2c2c;
+      color: #f0f0f0;
+      border: 1px solid #555;
+    }
+
+    body.modo-oscuro .footer {
+      background: linear-gradient(to right, #2a2a2a, #444);
+      color: #e0e0e0;
+    }
   </style>
 </head>
 <body>
   <header class="header">
-    <h1>Frases con IA</h1>
-    <p>Crea una frase del dia con IA</p>
+    <button id="modoOscuroBtn">🌙</button>
+    <h1>TIA Visionaria</h1>
+    <p>Crea una frase del día con IA</p>
   </header>
 
   <main class="contenedor">
     <div class="card">
       <div class="icono-frase">❝</div>
-      <h2>Escribe tu frase del dia</h2>
-      <p class="subtexto">Combinalo con estas imagenes</p>
+      <h2>Escribe tu frase del día</h2>
+      <p class="subtexto">Combínalo con estas imágenes</p>
 
       <label for="frase" class="etiqueta-frase">Tu frase:</label>
       <textarea id="frase" placeholder="Ejemplo: Buenos días mi amor, que tengas un día bendecido lleno de alegría..."></textarea>
 
-      <p class="etiqueta-estilo"> Estilo de imagen:</p>
+      <p class="etiqueta-estilo">Estilo de imagen:</p>
       <div class="opciones-estilo">
-        <button class="boton estilo-pato">Paisaje</button>
-        <button class="boton estilo-flores">Piolin</button>
-        <button class="boton estilo-gatitos">Animales</button>
-        <button class="boton estilo-paisaje">Dios</button>
+        <button class="boton estilo-pato">🐥 Piolín</button>
+        <button class="boton estilo-flores">🌸 Flores</button>
+        <button class="boton estilo-gatitos">🐒 Animales</button>
+        <button class="boton estilo-paisaje">🏞 Paisaje</button>
       </div>
 
-      <button class="generar">Generar con IA</button>
+      <button class="generar">📥 Generar Imagen</button>
     </div>
   </main>
-</body>
-</html>
+
+  <div id="imagenGenerada" style="display: none; text-align: center; margin-top: 20px;">
+    <img id="imagenFinal" src="" alt="Imagen generada" style="max-width: 300px; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
+    <div style="margin-top: 15px;">
+      <a id="descargarBtn" download="frase_generada.png" class="generar">⬇ Descargar Imagen</a>
+      <button id="volverBtn" class="generar">🔁 Volver a generar</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-contenido">
+      <div class="footer-iconos">❤ ⭐ ✏</div>
+      <p>Hecho con amor para todas tus frases especiales</p>
+      <small>© 2025 Frases de TIA IA</small>
+    </div>
+  </footer>
+
+  <script>
+    // Modo oscuro
+    const btn = document.getElementById("modoOscuroBtn");
+    btn.addEventListener("click", function () {
+      document.body.classList.toggle("modo-oscuro");
+      btn.textContent = document.body.classList.contains("modo-oscuro") ? "☀" : "🌙";
+    });
+
+    // Selección de estilo
+    let estiloSeleccionado = null;
+    const botonesEstilo = document.querySelectorAll(".opciones-estilo .boton");
+    botonesEstilo.forEach(btn => {
+      btn.addEventListener("click", () => {
+        botonesEstilo.forEach(b => b.style.outline = "none");
+        btn.style.outline = "3px solid #000";
+        if (texto.includes("piolín") || btn.textContent.includes("🐥")) {
+      estiloSeleccionado = "piolin";
+    } else if (texto.includes("flores") || btn.textContent.includes("🌸")) {
+      estiloSeleccionado = "flores";
+    } else if (texto.includes("animales") || btn.textContent.includes("🐒")) {
+      estiloSeleccionado = "animales";
+    } else if (texto.includes("paisaje") || btn.textContent.includes("🏞")) {
+      estiloSeleccionado = "paisaje";
+    } else {
+      estiloSeleccionado = null;
+    }
+  });
+});
+
+// Botón generar imagen
+const btnGenerar = document.querySelector(".generar");
+const textoInput = document.getElementById("frase");
+const contenedorImagen = document.getElementById("imagenGenerada");
+const imagenFinal = document.getElementById("imagenFinal");
+const btnDescargar = document.getElementById("descargarBtn");
+const btnVolver = document.getElementById("volverBtn");
+
+btnGenerar.addEventListener("click", () => {
+  const frase = textoInput.value.trim();
+  if (!frase) {
+    alert("Por favor, escribe una frase.");
+    return;
+  }
+  if (!estiloSeleccionado) {
+    alert("Por favor, selecciona un estilo de imagen.");
+    return;
+  }
+
+  // Petición al backend
+  fetch("/generar", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ frase: frase, estilo: estiloSeleccionado })
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.error) {
+        alert("Error: " + data.error);
+        return;
+      }
+      // Mostrar imagen
+      imagenFinal.src = "data:image/png;base64," + data.imagen_base64;
+      btnDescargar.href = imagenFinal.src;
+      contenedorImagen.style.display = "block";
+      document.querySelector(".contenedor").style.display = "none";
+    })
+    .catch(err => {
+      alert("Error al generar imagen.");
+      console.error(err);
+    });
+});
+
+// Botón volver a generar
+btnVolver.addEventListener("click", () => {
+  contenedorImagen.style.display = "none";
+  document.querySelector(".contenedor").style.display = "flex";
+  textoInput.value = "";
+  estiloSeleccionado = null;
+  botonesEstilo.forEach(b => b.style.outline = "none");
+  imagenFinal.src = "";
+});
