@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>frases con IA</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fcddec, #d0e5ff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+
+    .header {
+      text-align: center;
+      padding: 20px;
+      color: white;
+      background: linear-gradient(to right, #e49cd2, #b6d8ff);
+      width: 100%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .header p {
+      margin-top: 5px;
+      font-style: italic;
+      font-size: 14px;
+    }
+
+    .contenedor {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      width: 320px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      border: 2px solid #f3c7e5;
+    }
+
+    .icono-frase {
+      font-size: 36px;
+      background-color: #e58ed8;
+      color: white;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin: 10px 0 5px;
+    }
+
+    .subtexto {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .etiqueta-frase, .etiqueta-estilo {
+      display: block;
+      font-weight: bold;
+      margin: 15px 0 5px;
+      text-align: left;
+    }
+
+    textarea {
+      width: 100%;
+      height: 80px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 10px;
+      resize: none;
+      font-size: 14px;
+    }
+
+    .opciones-estilo {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    .boton {
+      padding: 10px;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .boton:hover {
+      transform: scale(1.05);
+    }
+
+    .estilo-pato { background: linear-gradient(to right, #fce38a, #f38181); }
+    .estilo-flores { background: linear-gradient(to right, #fcb6d6, #f8bfbf); }
+    .estilo-gatitos { background: linear-gradient(to right, #dcb6f8, #a6a8ff); }
+    .estilo-paisaje { background: linear-gradient(to right, #b3f6c9, #89d3f6); }
+
+    .generar {
+      background: linear-gradient(to right, #f89dc5, #8db7ff);
+      border: none;
+      padding: 12px 20px;
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 10px;
+    }
+
+    .generar:hover {
+      background: linear-gradient(to right, #f48bbd, #6da9ff);
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Frases con IA</h1>
+    <p>Crea una frase del dia con IA</p>
+  </header>
+
+  <main class="contenedor">
+    <div class="card">
+      <div class="icono-frase">❝</div>
+      <h2>Escribe tu frase del dia</h2>
+      <p class="subtexto">Combinalo con estas imagenes</p>
+
+      <label for="frase" class="etiqueta-frase">Tu frase:</label>
+      <textarea id="frase" placeholder="Ejemplo: Buenos días mi amor, que tengas un día bendecido lleno de alegría..."></textarea>
+
+      <p class="etiqueta-estilo"> Estilo de imagen:</p>
+      <div class="opciones-estilo">
+        <button class="boton estilo-pato">Paisaje</button>
+        <button class="boton estilo-flores">Piolin</button>
+        <button class="boton estilo-gatitos">Animales</button>
+        <button class="boton estilo-paisaje">Dios</button>
+      </div>
+
+      <button class="generar">Generar con IA</button>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,55 +1,58 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Frases del Usuario</title>
-  <style>
-    body {
-      background-color: #121212;
-      color: #ffffff;
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 50px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frases de Tia con IA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #ffdde1, #cecfe2);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .contenido_inicio h1{
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            color: #6e3a8c;
+            margin-bottom: 0.5em;
+        }
 
-    input[type="text"] {
-      width: 300px;
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-      margin-bottom: 10px;
-      font-size: 16px;
-    }
+        .contenido_inicio p{
+            color: #555;
+            font-size: 1.2em;
+            margin-bottom: 2em;
+        }
 
-    button {
-      background-color: #85bf25;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin: 5px;
-    }
-  </style>
+        .btn_inicio{
+            text-decoration: none;
+            background: linear-gradient(to right, #ff6ec4, #7873f5);
+            color: white;
+            padding: 1em 2em;
+            border-radius: 30px;
+            font-size: 1em;
+            font-weight: bold;
+            box-shadow: 0 4px 14px rgb(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .btn_inicio:hover{
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
-
-  <h1>Escribí tu frase del día</h1>
-
-  <input type="text" id="fraseInput" placeholder="Escribí algo bonito...">
-  <button onclick="irAPagina2()">Piolín</button>
-
- 
-  <script>
-    function irAPagina2() {
-      const frase = document.getElementById('fraseInput').value;
-      localStorage.setItem("frasePiolin", frase);
-      window.location.href = "piolin.html";
-    }
-  </script>
-
+    <section class="inicio">
+        <div class="contenido_inicio">
+            <h1>Frases de Tia con IA</h1>
+            <p>Crea frases con imagenes generadas por la IA</p>
+            <a href="IA.html" class="btn_inicio">Comenzar</a>
+        </div>
+    </section>
 </body>
 </html>
