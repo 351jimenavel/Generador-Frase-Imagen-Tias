@@ -38,3 +38,6 @@ API: Novita.ai
 - dios
 
 ❤️ Hecho con cariño para todas tus frases especiales.
+
+
+VIDEO EXPLICATIVO: https://drive.google.com/file/d/1rLWZIdDPafaef3uXPUyshOkANFDNgxhK/view?usp=sharing
